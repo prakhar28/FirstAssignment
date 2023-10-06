@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/plans', plansRouter )
-app.use('/formula', formulaRouter)
+app.use('/formulas', formulaRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

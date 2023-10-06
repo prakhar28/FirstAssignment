@@ -189,7 +189,7 @@ POST /plans
 ### Example 5: Appending a Formula to a Plan
 
 ```http
-PUT /plans/1/append
+POST /plans/1/append
 
 {
   "formulaId": 5
@@ -210,7 +210,7 @@ PUT /plans/1/replace_formula
 ### Example 7: Listing Formulas in a Plan
 
 ```http
-GET /plans/formulas
+GET /plans/1/formulas
 ```
 
 ### Example 8: Deleting a Plan
