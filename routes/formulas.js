@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const {addFormula, formulas} = require('../database/formulas')
+const {addFormula, formulas, fetchFormula} = require('../database/formulas')
 
+// API to Add a new formula.
 router.post('/', (req, res) => {
     try {
         // Parse the request body to get the formula details
         const { inputs, outputs } = req.body;
-        console.log("inputs", inputs)
 
         // Validate the request data (e.g., ensure inputs and outputs are arrays)
         if (!Array.isArray(inputs) || !Array.isArray(outputs)) {
@@ -24,13 +24,14 @@ router.post('/', (req, res) => {
     }
 });
 
+// API to See the inputs and outputs of a specific formula.
 router.get('/:formulaId', (req, res) => {
     try {
         // Extract the formula ID from the URL parameters
         const formulaId = parseInt(req.params.formulaId);
 
         // Find the formula with the specified ID in the 'formulas' array
-        const formula = formulas.find((f) => f.id === formulaId);
+        const formula = fetchFormula(formulaId);
 
         // Check if the formula exists
         if (!formula) {
