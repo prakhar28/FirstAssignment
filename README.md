@@ -218,3 +218,19 @@ GET /plans/formulas
 ```http
 DELETE /plans/1
 ```
+
+### Response Codes
+
+200 OK: The request was successful.
+
+201 Created: The resource was successfully created.
+
+204 No Content: The request was successful, and there is no response body.
+
+400 Bad Request: The request contained invalid data or parameters.
+
+404 Not Found: The requested resource was not found.
+
+500 Internal Server Error: An internal server error occurred.
+
+Please feel free to reach out if you have any questions or need further assistance with using this API.

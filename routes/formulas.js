@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {addFormula, formulas, fetchFormula} = require('../database/formulas')
+const {addFormula, fetchFormula} = require('../database/formulas')
 
 // API to Add a new formula.
 router.post('/', (req, res) => {

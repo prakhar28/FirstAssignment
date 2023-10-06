@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const { fetchPlansContainingFormula, plans, addNewPlan, fetchPlan, addFormulaToPlan, updatePlanFormula, deletePlan } = require('../database/plans')
-const {addFormula, formulas, fetchFormula, fetchAllFormulasWithId} = require("../database/formulas");
+const {fetchFormula, fetchAllFormulasWithId} = require("../database/formulas");
 
 // API to List which plans contain a specific formula
 router.get('/:formulaId', (req, res) => {
