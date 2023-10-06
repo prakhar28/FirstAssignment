@@ -35,10 +35,22 @@ function fetchPlan(planId) {
     return plans.findIndex((p) => p.id === planId)
 }
 
+function updatePlanFormula(planIndex, formulaIndex, newFormulaId) {
+    const planToUpdate = plans[planIndex];
+    planToUpdate.sequence[formulaIndex] = newFormulaId;
+    return planToUpdate;
+}
+
+function deletePlan(planIndex) {
+    return plans.splice(planIndex, 1);
+}
+
 module.exports = {
     plans,
     fetchPlansContainingFormula,
     addNewPlan,
     fetchPlan,
-    addFormulaToPlan
+    addFormulaToPlan,
+    updatePlanFormula,
+    deletePlan
 }

@@ -60,8 +60,15 @@ function fetchFormula(formulaId) {
     return formulas.find((f) => f.id === formulaId);
 }
 
+function fetchAllFormulasWithId(formulaIds) {
+    return formulaIds.map((formulaId) => {
+        return formulas.find((f) => f.id === formulaId);
+    });
+}
+
 module.exports = {
     addFormula,
     formulas,
-    fetchFormula
+    fetchFormula,
+    fetchAllFormulasWithId
 }
